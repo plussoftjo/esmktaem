@@ -18,6 +18,7 @@ class CreateBagsTable extends Migration
             $table->integer('user_id');
             $table->integer('item_id');
             $table->integer('qty');
+            $table->text('specal')->nullable();
             $table->timestamps();
         });
     }

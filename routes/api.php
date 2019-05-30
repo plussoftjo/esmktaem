@@ -67,6 +67,8 @@ Route::group(['middleware' => 'auth:api'], function(){
 	/// Stars Store Controller 
 	///////
 	Route::get('/stars/store/index','API\storeController@starStore');
+	Route::get('/stars/search/{e}','API\starsController@search');
+	Route::get('/stars/searchFull/{e}','API\starsController@search');
 
 	//////// 
 	/// EsmkT3m Controller 

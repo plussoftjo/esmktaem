@@ -78,7 +78,7 @@ class storeController extends Controller
     }
 
     public function esmkStoreIndex() {
-        $fetch = store::where('type',2)->orderBy('id','decs')->firstOrFail();
+        $fetch = store::where('type',2)->orderBy('id','decs')->first();
         return response()->json($fetch);
     }
 

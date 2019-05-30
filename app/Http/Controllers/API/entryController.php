@@ -33,6 +33,12 @@ class entryController extends Controller
         $user_id = Auth::id();
         $entry = entry::create([
             'user_id' => $user_id,
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'snap' => $request->snap,
+            'insta' => $request->insta,
+            'address' => $request->address,
             'msg' => $request->msg
         ]);
         return response()->json(200);

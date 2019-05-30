@@ -18,7 +18,7 @@ class starsController extends Controller
     }
 
     public function index() {
-    	return response()->json(User::where('type','stars')->get());
+    	return response()->json(User::where('type','stars')->orderBy('name','asc')->get());
     }
 
     public function fetchStars() {
@@ -26,4 +26,12 @@ class starsController extends Controller
         $female = User::where('type','stars')->where('gender','female')->inRandomOrder()->take(10)->get();
         return response()->json(['male' => $male,'female' =>$female]);
     }
+
+    public function search($e) {
+        return response()->json(User::where('type','stars')->where('name','like',$e.'%')->take(10)->get());
+    }
+
+    public function searchFull($e) {
+        return response()->json(User::where('type','stars')->where('name','like',$e.'%')->take(10)->get());
+    } 
 }

@@ -17,6 +17,12 @@ class CreateEntriesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->boolean('approved')->default(0);
+            $table->string('name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('insta')->nullable();
+            $table->string('snap')->nullable();
             $table->string('msg')->nullable();
             $table->timestamps();
         });

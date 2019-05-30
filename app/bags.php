@@ -9,7 +9,7 @@ class bags extends Model
 
 	public $with = ['user','item','bags_options'];
     protected $fillable = [
-       'user_id','qty','item_id'
+       'user_id','qty','item_id','specal'
     ];
 
     public function user() {

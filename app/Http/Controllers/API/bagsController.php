@@ -15,7 +15,8 @@ class bagsController extends Controller
     	$bags = bags::create([
     		'user_id' => Auth::id(),
     		'item_id' => $request->item_id,
-    		'qty' => $request->qty
+    		'qty' => $request->qty,
+            'specal' => $request->specal
     	]);
 
     	foreach ($request->checkBoxItem as $c) {
